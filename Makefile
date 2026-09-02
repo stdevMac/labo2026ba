@@ -38,4 +38,5 @@ lab:
 	jupyter lab "$(REPO)"
 
 test:
+	python3 "$(REPO)/tests/test_notebook_env.py"
 	"$(REPO)/tests/test_overhaul.sh"
