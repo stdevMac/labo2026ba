@@ -1,184 +1,31 @@
-#Archivos que considero datasets grandes, lastima que git no lo permita nativamente
+# data
 *.csv
 *.csv.gz
+!exp/runs.csv
+datasets/
 
+# experiments on the bucket are not this rule; local copies:
+exp/*/
 
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# secrets
+.env
+**/kaggle.json
 
-# Folder config file
-Desktop.ini
+# R
+.Rhistory
+.RData
+.Rproj.user
+renv/library/
+renv/staging/
+.Rprofile
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
+# notebooks / OS
+.ipynb_checkpoints/
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-*.md
+Thumbs.db
 *_files/
-__pycache__/
-!README.md
-*.ipynb_checkpoints/
-
 *copia.ipynb
 
-# XCode
-xcuserdata
-project.xcworkspace
-
-# Notepad++
-nppBackup
-
-# SublimeText project files
-*.sublime-workspace
-
-# Textmate
-*.tmproj
-*.tmproject
-tmtags
-
-# vim
-.*.sw[a-z]
-*.un~
-Session.vim
-.netrwhist
-
-# Editors with AutoBackup
-*~
-
-#######################################
-# File backups                        #
-#######################################
-
-*.bak
-*.backup
-
-
-#######################################
-# Languages                           #
-#######################################
-
-# Java
-*.class
-*.ear
-*.jar
-*.war
-
-# C
-*.o
-*.lib
-*.a
-*.dll
-*.ko
-*.so
-*.so.*
-*.dylib
-*.exe
-*.out
-*.app
-
-# C++
-*.slo
-*.lo
-*.o
-*.so
-*.dylib
-*.lai
-*.la
-*.a
-
-# Latex
-*.acn
-*.acr
-*.alg
-*.aux
-*.bcf
-*.bbl
-*.blg
-*.brf
-*.dvi
-*.fdb_latexmk
-*.fls
-*.glg
-*.glo
-*.gls
-*.idx
-*.ilg
-*.ind
-*.ist
-*.lof
-*.log
-*.lol
-*.lot
-*.maf
-*.mtc
-*.mtc0
-*.nav
-*.nlo
-*.out
-*.pdfsync
-*.pdftex
-*.ps
-*.pyg
-*.snm
-*.synctex.gz
-*.thm
-*.toc
-*.vrb
-*.xdy
-*.tdo
-
-# Python
+# python
+__pycache__/
 *.pyc
-
-# Scala - sbt specific
-.cache
-.history
-lib_managed/
-src_managed/
-project/boot/
-project/plugins/project/
-project/target
-
-# Scala - IDE specific
-.scala_dependencies
-.worksheet
-
-.vscode/settings.json
