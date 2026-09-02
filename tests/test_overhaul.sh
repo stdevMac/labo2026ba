@@ -3,7 +3,9 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 tmp=$(mktemp -d)
-trap 'rm -rf "$tmp"' EXIT
+runs_header="ts,name,script,cp,minsplit,minbucket,maxdepth,cutoff,n_ones,kaggle_score"
+restore_runs() { printf '%s\n' "$runs_header" > "$ROOT/exp/runs.csv"; }
+trap 'rm -rf "$tmp"; restore_runs' EXIT
 
 mkdir -p "$tmp/datasets" "$tmp/exp"
 python3 - "$tmp/datasets/dataset_pequeno.csv" <<'PY'
@@ -37,6 +39,7 @@ test -f "$tmp/exp/test_dry/submission.csv"
 test -f "$tmp/exp/test_dry/params.txt"
 grep -q 'test_dry' "$tmp/exp/runs.csv"
 grep -q 'test_dry' "$ROOT/exp/runs.csv"
+restore_runs
 
 python3 - "$tmp/exp/test_dry/submission.csv" <<'PY'
 import csv
